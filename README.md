@@ -34,3 +34,24 @@ Reworking project...
 ## Video
 
 Reworking project...
+
+## Documentation
+
+### ./navbar.js
+
+The `manageMobileNavbar()` function is part of the `navbar.js` configuration. This function will allow to add or remove the `activeNavbar` class that allows to open and close this navbar in its mobile version. Also if `headerContainerNavList` contains this class, a background will be added to the `headerContainerNav` and `headerContainerLogo` containers to be able to differentiate the content and when they do not have it, the background will be removed:
+
+Translated with www.DeepL.com/Translator (free version)
+
+```
+const manageMobileNavbar = () => {
+  headerContainerNavList.classList.toggle("activeNavbar");
+
+  if (headerContainerNavList.classList.contains("activeNavbar")) {
+    headerContainerNav.style.backgroundColor = "#181A31";
+    headerContainerLogo.style.backgroundColor = "#181A31";
+  } else {
+    headerContainerLogo.style.backgroundColor = "";
+  }
+};
+```
