@@ -146,3 +146,126 @@ body {
     color: #fff;
   }
 }
+
+/* Carousel */
+
+.carousel_container {
+  height: 300px;
+  margin: auto;
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.carousel_container_track {
+  display: flex;
+  width: calc(500px * 18);
+  transform: translateX(-300px);
+}
+
+.fa-arrow-left {
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  opacity: 0.5;
+  left: 25px;
+  top: 120px;
+  z-index: 3;
+  cursor: pointer;
+  perspective: 100px;
+  transition: transform 1s, color 1s, opacity 1s;
+}
+
+.fa-arrow-right {
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  opacity: 0.5;
+  right: 25px;
+  top: 120px;
+  z-index: 3;
+  cursor: pointer;
+  perspective: 100px;
+  transition: transform 1s, color 1s, opacity 1s;
+}
+
+.fa-arrow-left:hover,
+.fa-arrow-right:hover {
+  transform: scale(1.2);
+  color: #5c5ce1;
+  opacity: 1;
+}
+
+.carousel_container_track_slide {
+  height: 300px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 15px;
+  margin: 0 15px 0 15px;
+  perspective: 100px;
+}
+
+.carousel_container_track_slide img {
+  height: 280px;
+  width: 500px;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 10px;
+  transition: transform 1s;
+}
+
+.carousel_container_track_slide img:hover {
+  transform: translateZ(5px);
+}
+
+.carousel_container_track_slide h2 {
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  padding: 10px;
+}
+
+.carousel_container_track_slide h3 {
+  font-size: 15px;
+  color: #181a31;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  padding: 10px;
+}
+
+.carousel_container::after {
+  background: linear-gradient(to right, rgba(13, 16, 35, 0) 0%, #0d1023 100%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 7%;
+  z-index: 2;
+}
+
+.carousel_container::before {
+  background: linear-gradient(to left, rgba(13, 16, 35, 0) 0%, #0d1023 100%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 7%;
+  z-index: 2;
+}
+
+.carousel_container::before {
+  left: 0;
+  top: 0;
+}
+
+.carousel_container::after {
+  right: 0;
+  top: 0;
+}
