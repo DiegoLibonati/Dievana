@@ -159,11 +159,12 @@ body {
   margin-top: 20px;
   overflow: hidden;
 }
-
+/* 0 comienzo - -5600 final 18 slides*/
 .carousel_container_track {
   display: flex;
   width: calc(500px * 18);
   transform: translateX(-300px);
+  transition: transform 0.5s;
 }
 
 .fa-arrow-left {
