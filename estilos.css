@@ -236,7 +236,7 @@ body {
 
 .carousel_container_track_slide h3 {
   font-size: 15px;
-  color: #181a31;
+  color: #0082ff;
   position: absolute;
   bottom: 5px;
   left: 5px;
@@ -269,4 +269,236 @@ body {
 .carousel_container::after {
   right: 0;
   top: 0;
+}
+
+/* Grid movies */
+
+.movies_grid_container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.tendencias_list_container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  border-radius: 10px;
+  padding: 40px;
+  background-color: #181a31;
+  width: 100%;
+  height: auto;
+}
+
+.tendencias_list_container h2 {
+  font-size: 20px;
+  color: #0082ff;
+  text-align: start;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tendencias_list_container_movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  position: relative;
+}
+
+.tendencias_list_container_movie img {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tendencias_list_container_movie_description {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column wrap;
+  width: 55%;
+  height: auto;
+  margin-left: 10px;
+}
+
+.tendencias_list_container_movie_description h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.tendencias_list_container_movie_description h4 {
+  font-size: 16px;
+  color: #0082ff;
+  margin-bottom: 5px;
+}
+
+.tendencias_list_container_movie_description h5 {
+  font-size: 14px;
+  color: #fff;
+}
+
+.top_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #0082ff;
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 50%;
+  left: 0;
+  top: 25px;
+}
+
+.movies_container_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  width: 100%;
+  height: auto;
+}
+
+.movies_container_list_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.movies_container_list_header h2 {
+  font-size: 30px;
+  color: #0082ff;
+}
+
+.movies_container_list_header_button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100px;
+  height: auto;
+}
+
+.movies_container_list_header_button a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #fff;
+}
+
+.movies_container_list_header_button .ver_todas {
+  position: relative;
+  font-size: 13px;
+  color: #0082ff;
+  cursor: pointer;
+  width: 20px;
+  opacity: 1;
+  top: 0;
+  right: 0;
+  transition: transform 0s, color 0s, opacity 0s;
+}
+
+.movies_container_list_grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  height: auto;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-bottom: 10px;
+}
+
+.movies_container_list_grid_movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.movies_container_list_grid_movie img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movies_container_list_grid_movie_description {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  bottom: 10px;
+  left: 10px;
+}
+
+.movies_container_list_grid_movie_description h3 {
+  font-size: 20px;
+  color: #fff;
+  width: 100%;
+}
+
+.movies_container_list_grid_movie_description h4 {
+  font-size: 18px;
+  color: #0082ff;
+  margin-right: 10px;
+}
+
+.movies_container_list_grid_movie_description h5 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.movies_container_list_grid_information {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column wrap;
+  width: 100%;
+  height: auto;
+}
+
+.movies_container_list_grid_information h2 {
+  font-size: 40px;
+  color: #0082ff;
+  margin-bottom: 10px;
+}
+
+.movies_container_list_grid_information p {
+  font-size: 18px;
+  color: #626e72;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+strong {
+  color: #fff;
+}
+
+hr {
+  color: #626e72;
+  background-color: #626e72;
+  stroke-width: 10px;
+  width: 100%;
+  border: none;
+  height: 1px;
 }
