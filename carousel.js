@@ -13,13 +13,13 @@ const slideCarouselTrack = (e) => {
       .split(",")[4]
   );
 
-  if (carouselTrackTransformTranslateX >= 0) {
+  if (carouselTrackTransformTranslateX >= -100) {
     carouselContainerTrack.style.transition = "transform 0s";
-    carouselContainerTrack.style.transform = `translateX(-7750px)`;
+    carouselContainerTrack.style.transform = `translateX(-7060px)`;
     return;
   }
 
-  if (carouselTrackTransformTranslateX < -7750) {
+  if (carouselTrackTransformTranslateX < -7060) {
     carouselContainerTrack.style.transition = "transform 0s";
     carouselContainerTrack.style.transform = `translateX(-300px)`;
     return;
