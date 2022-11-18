@@ -370,6 +370,7 @@ body {
   flex-flow: column wrap;
   width: 100%;
   height: auto;
+  padding: 10px;
 }
 
 .movies_container_list_header {
@@ -501,4 +502,188 @@ hr {
   width: 100%;
   border: none;
   height: 1px;
+}
+
+@media screen and (min-width: 500px) {
+  .movies_container_list_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tendencias_list_container h2 {
+    font-size: 40px;
+  }
+
+  .tendencias_list_container_movie img {
+    width: 30%;
+  }
+
+  .tendencias_list_container_movie_description {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 55%;
+    height: auto;
+    margin-left: 10px;
+  }
+
+  .tendencias_list_container_movie_description h3 {
+    font-size: 22px;
+  }
+
+  .tendencias_list_container_movie_description h4 {
+    font-size: 20px;
+  }
+
+  .tendencias_list_container_movie_description h5 {
+    font-size: 18px;
+  }
+
+  .top_circle {
+    width: 60px;
+    height: 60px;
+    left: 20px;
+    font-size: 30px;
+  }
+
+  .movies_container_list_header h2 {
+    font-size: 40px;
+  }
+
+  .movies_container_list_header_button a {
+    font-size: 18px;
+  }
+
+  .movies_container_list_header_button .ver_todas {
+    font-size: 16px;
+  }
+
+  .movies_container_list_grid_movie_description h3 {
+    font-size: 25px;
+  }
+
+  .movies_container_list_grid_movie_description h4 {
+    font-size: 23px;
+  }
+
+  .movies_container_list_grid_movie_description h5 {
+    font-size: 21px;
+  }
+
+  .movies_container_list_grid_information h2 {
+    font-size: 50px;
+  }
+
+  .movies_container_list_grid_information p {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .top_circle {
+    left: 40px;
+  }
+
+  .movies_container_list_grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+  .movies_container_list_grid_movie img {
+    height: 400px;
+  }
+
+  .movies_container_list_grid_information h2 {
+    font-size: 35px;
+  }
+
+  .movies_container_list_grid_information p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .movies_grid_container {
+    grid-template-columns: 30% 70%;
+  }
+
+  .tendencias_list_container {
+    height: 25%;
+  }
+
+  .top_circle {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: 10px;
+    font-size: 15px;
+  }
+
+  .tendencias_list_container h2 {
+    font-size: 25px;
+  }
+
+  .movies_container_list_header h2 {
+    font-size: 30px;
+  }
+
+  .movies_container_list_header_button a {
+    font-size: 15px;
+  }
+
+  .movies_container_list_header_button .ver_todas {
+    font-size: 13px;
+    left: -10px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .movies_container_list_grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .movies_grid_container {
+    grid-template-columns: 20% 75%;
+  }
+  .tendencias_list_container_movie img {
+    width: 75px;
+  }
+
+  .tendencias_list_container {
+    height: 35%;
+  }
+
+  .top_circle {
+    width: 40px;
+    height: 40px;
+    left: 5px;
+    top: 10px;
+  }
+
+  .tendencias_list_container_movie_description h3 {
+    font-size: 18px;
+  }
+
+  .tendencias_list_container_movie_description h4 {
+    font-size: 16px;
+  }
+
+  .tendencias_list_container_movie_description h5 {
+    font-size: 14px;
+  }
+
+  .movies_container_list_grid_movie_description h3 {
+    font-size: 18px;
+  }
+
+  .movies_container_list_grid_movie_description h4 {
+    font-size: 16px;
+  }
+
+  .movies_container_list_grid_movie_description h5 {
+    font-size: 14px;
+  }
 }
