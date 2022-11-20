@@ -221,6 +221,7 @@ body {
   padding: 15px;
   margin: 0 15px 0 15px;
   transition: transform 0.5s;
+  box-shadow: 0 0 2rem rgb(0 0 0 / 50%);
 }
 
 .carousel_container_track_slide:hover {
@@ -303,6 +304,7 @@ body {
   background-color: #181a31;
   width: 100%;
   height: auto;
+  box-shadow: 0 0 2rem rgb(0 0 0 / 50%);
 }
 
 .tendencias_list_container h2 {
@@ -444,6 +446,7 @@ body {
   height: auto;
   position: relative;
   transition: transform 0.5s;
+  box-shadow: 0 0 2rem rgb(0 0 0 / 50%);
 }
 
 .movies_container_list_grid_movie:hover {
