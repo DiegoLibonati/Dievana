@@ -37,7 +37,7 @@ Reworking project...
 
 ## Documentation
 
-### ./navbar.js
+### ./js/navbar.js
 
 The `manageMobileNavbar()` function is part of the `navbar.js` configuration. This function will allow to add or remove the `activeNavbar` class that allows to open and close this navbar in its mobile version. Also if `headerContainerNavList` contains this class, a background will be added to the `headerContainerNav` and `headerContainerLogo` containers to be able to differentiate the content and when they do not have it, the background will be removed:
 
@@ -54,7 +54,7 @@ const manageMobileNavbar = () => {
 };
 ```
 
-### ./carousel.js
+### ./js/carousel.js
 
 In the function `slideCarouselTrack()` of the file `carousel.js` it will collect the id of the button of the carousel that was clicked. In the same also in the variable `carouselTrackTransformTranslateX` we take the position in which is the Translate X of CSS. Then we will make validations on this variable to know what to do with the carousel if to send it to the initial position `X = 0` or to the final position `X = -7060`. Or simply if it does not reach the limits add `250px` or subtract them to the variable `carouselTrackTransformTranslateX`.
 
@@ -94,4 +94,107 @@ const slideCarouselTrack = (e) => {
     carouselTrackTransformTranslateX + 250
   }px)`;
 };
+```
+
+### ./js/api/apiConfig.js
+
+In this file we are going to obtain all the configuration variables to make the requests to the Internet API that we use.
+
+### ./js/api/getGenres.js
+
+In `getGenres()` we will get all the available genres in the API with their respective `id` and their `name`:
+
+```
+export const getGenres = async () => {
+  const API = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
+
+  const request = await fetch(API);
+
+  const data = await request.json();
+
+  return data;
+};
+```
+
+In `getGenreMovie()` we will get the specific genre of the movie we are looking for through an ID that we pass as a parameter:
+
+```
+export const getGenreMovie = async (genreId) => {
+  let genres = await getGenres();
+
+  genres = genres["genres"];
+
+  const genre = genres.filter((genre) => genre.id === genreId)[0];
+
+  return genre;
+};
+```
+
+### ./js/api/getResponse.js
+
+In `getResponse()` we are going to obtain the movies of the specific section that we passed by `route` in parameters, in addition we will be able to pass it in which page we are through `page` that by default is 1:
+
+```
+export const getResponse = async (route, page = 1) => {
+  const API = `https://api.themoviedb.org/3/movie/${route}?api_key=${API_KEY}&language=en-US&page=${page}`;
+
+  const request = await fetch(API);
+
+  const data = await request.json();
+
+  return data;
+};
+```
+
+### ./js/movies/carouselMovies.js | ./js/movies/topRatedMovies.js | ./js/movies/trendsMovies.js
+
+In these files we are going to create a fragment where we are going to load the HTML that you want to add to the element that we bring from HTML with `QuerySelector`. After adding all the elements to the `Fragment` we are going to add it to the element that we bring from HTML.
+
+One example:
+
+```
+const moviesContainerListGrid = document.querySelector(
+  ".movies_container_list_grid"
+);
+
+const fragment = document.createDocumentFragment();
+
+let topRatedArray = await getResponse("top_rated", "1");
+topRatedArray = topRatedArray["results"];
+
+const createHtmlTopRatedMovies = async (
+  imageLink,
+  title,
+  genreId,
+  releaseDate
+) => {
+  const genre = await getGenreMovie(genreId);
+  const releaseYear = releaseDate.split("-")[0];
+  return `
+    <img
+    src="${IMG_PATH + imageLink}"
+    alt="${title}"
+    />
+    <div class="movies_container_list_grid_movie_background"></div>
+    <div class="movies_container_list_grid_movie_description">
+    <h3>${title}</h3>
+    <h4>${genre["name"]}</h4>
+    <h5>${releaseYear}</h5>
+    </div>
+ `;
+};
+
+topRatedArray.forEach(async (topRatedMovie) => {
+  const { poster_path, title, genre_ids, release_date } = topRatedMovie;
+  const genreId = genre_ids[0];
+  const div = document.createElement("div");
+  div.setAttribute("class", "movies_container_list_grid_movie");
+  createHtmlTopRatedMovies(poster_path, title, genreId, release_date).then(
+    (res) => (div.innerHTML = res)
+  );
+
+  fragment.appendChild(div);
+});
+
+moviesContainerListGrid.appendChild(fragment);
 ```
