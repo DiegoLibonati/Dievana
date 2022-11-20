@@ -162,6 +162,7 @@ body {
 /* 0 comienzo - -5600 final 18 slides*/
 .carousel_container_track {
   display: flex;
+  position: absolute;
   width: calc(500px * 18);
   transform: translateX(-300px);
   transition: transform 0.5s;
@@ -249,8 +250,8 @@ body {
   font-size: 15px;
   color: #0082ff;
   position: absolute;
-  bottom: 5px;
-  left: 5px;
+  bottom: 2px;
+  left: 2px;
   padding: 10px;
 }
 
