@@ -146,6 +146,20 @@ export const getResponse = async (route, page = 1) => {
 };
 ```
 
+In `getResponseBySort()` we are going to obtain all the movies through a filter that we will apply in the search, this filter we will pass it through the `sort` parameter, in addition we will be able to look for in that page we want that it brings us these results with `page`:
+
+```
+export const getResponseBySort = async (sort, page = 1) => {
+  const API = `https://api.themoviedb.org/3/discover/movie?sort_by=${sort}&api_key=${API_KEY}&page=${page}`;
+
+  const request = await fetch(API);
+
+  const data = await request.json();
+
+  return data;
+};
+```
+
 ### ./js/movies/carouselMovies.js | ./js/movies/topRatedMovies.js | ./js/movies/trendsMovies.js
 
 In these files we are going to create a fragment where we are going to load the HTML that you want to add to the element that we bring from HTML with `QuerySelector`. After adding all the elements to the `Fragment` we are going to add it to the element that we bring from HTML.
@@ -197,4 +211,58 @@ topRatedArray.forEach(async (topRatedMovie) => {
 });
 
 moviesContainerListGrid.appendChild(fragment);
+```
+
+### ./js/movies/loadMoviesOnMoviesPage.js
+
+With the `loadMovies()` function we are going to create a fragment and obtain through the response of `getResponseBySort()` all the movies with the filter applied in the page we want. In addition we are going to create for each movie that is in the response its respective HTML to dump it in the document fragment, once created all the movies we will add that fragment to the HTML to render:
+
+```
+const loadMovies = async (page) => {
+  const fragment = document.createDocumentFragment();
+
+  let moviesArray = await getResponseBySort("popularity.desc", page);
+  moviesArray = moviesArray["results"];
+
+  const createHtmlMovie = async (
+    imageLink,
+    title,
+    genreId,
+    releaseDate,
+    description
+  ) => {
+    const genre = await getGenreMovie(genreId);
+    const releaseYear = releaseDate.split("-")[0];
+    return `
+    <img
+    src="${IMG_PATH + imageLink}"
+    alt="${title}"
+    />
+
+    <div class="movies_container_list_movies_movie_description">
+    <h2>${title}</h2>
+    <h3>${releaseYear}</h3>
+    <h4>SINOPSIS</h4>
+    <p>
+        ${description}
+    </p>
+    <h5>${genre["name"]}</h5>
+    </div>
+    `;
+  };
+
+  moviesArray.forEach(async (movie) => {
+    const { poster_path, title, genre_ids, release_date, overview } = movie;
+    const genreId = genre_ids[0];
+    const div = document.createElement("div");
+    div.setAttribute("class", "movies_container_list_movies_movie");
+    createHtmlMovie(poster_path, title, genreId, release_date, overview).then(
+      (res) => (div.innerHTML = res)
+    );
+
+    fragment.appendChild(div);
+  });
+
+  moviesContainerListMovies.appendChild(fragment);
+};
 ```
