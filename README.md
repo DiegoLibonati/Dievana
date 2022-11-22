@@ -37,11 +37,11 @@ I made a movie website. On this page we can see the 5 movies that are trending a
 
 ## Portfolio Link
 
-Reworking project...
+`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Movies%20Page`
 
 ## Video
 
-Reworking project...
+https://user-images.githubusercontent.com/99032604/203444247-0dfb2480-1667-41ad-817c-2899bf0dfd24.mp4
 
 ## Documentation
 
