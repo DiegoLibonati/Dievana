@@ -15,7 +15,7 @@
 
 ## Description
 
-Reworking project...
+I made a movie website. On this page we can see the 5 movies that are trending and also see the most popular and highest rated movies on the `Home` page. On the `Movies` page we can see 20 movies per page sorted by popularity, the pagination are two arrows to go back and one to go forward. Depending on which arrow is touched we will go to the next page or to the previous one.
 
 ## Technologies used
 
