@@ -25,7 +25,15 @@ I made a movie website. On this page we can see the 5 movies that are trending a
 
 ## Galery
 
-Reworking project...
+![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-0.jpg)
+
+![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-1.jpg)
+
+![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-2.jpg)
+
+![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-3.jpg)
+
+![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-4.jpg)
 
 ## Portfolio Link
 
