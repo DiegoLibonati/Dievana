@@ -23,21 +23,9 @@ I made a movie website. On this page we can see the 5 movies that are trending a
 2. CSS3
 3. HTML5
 
-## Galery
-
-![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-0.jpg)
-
-![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-1.jpg)
-
-![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-2.jpg)
-
-![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-3.jpg)
-
-![Movies-page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/Javascript/Imagenes/movies2-4.jpg)
-
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Movies%20Page`
+[`https://www.diegolibonati.com.ar/#/project/42`](https://www.diegolibonati.com.ar/#/project/42)
 
 ## Video
 
