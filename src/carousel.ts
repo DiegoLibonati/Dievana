@@ -1,12 +1,13 @@
 const carouselContainerTrack = document.querySelector(
   ".carousel_container_track"
-);
-const btnsCarousel = document.querySelectorAll(".btnCarousel");
+) as HTMLElement;
+const btnsCarousel = document.querySelectorAll(".btnCarousel") as NodeList;
 
-const slideCarouselTrack = (e) => {
-  const idBtnCarousel = e.target.id;
+const slideCarouselTrack = (e: Event) => {
+  const target = e.target as HTMLElement;
+  const idBtnCarousel = target.id;
 
-  const carouselTrackTransformTranslateX = parseInt(
+  const carouselTrackTransformTranslateX: number = parseInt(
     window
       .getComputedStyle(carouselContainerTrack)
       .getPropertyValue("transform")

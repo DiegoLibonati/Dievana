@@ -1,17 +1,22 @@
-import { getResponse } from "../api/getResponse.js";
-import { IMG_PATH } from "../api/apiConfig.js";
+import { getResponse } from "../api/getResponse.ts";
+import { IMG_PATH } from "../api/apiConfig.ts";
+import { Movies } from "../entities/vite-env.d";
 
 const carouselContainerTrack = document.querySelector(
   ".carousel_container_track"
-);
+) as HTMLElement;
 
-const fragment = document.createDocumentFragment();
+const fragment: DocumentFragment = document.createDocumentFragment();
 
-const upcomingArray = await getResponse("upcoming", "1");
-const upcomingMovies = upcomingArray["results"].slice(0, 18);
+const upcomingArray: Movies = await getResponse("upcoming", 1);
+const upcomingMovies = upcomingArray.results.slice(0, 18);
 
-const createHtmlUpcomingMovie = async (imageLink, title, releaseDate) => {
-  const releaseYear = releaseDate.split("-")[0];
+const createHtmlUpcomingMovie = async (
+  imageLink: string,
+  title: string,
+  releaseDate: string
+): Promise<string> => {
+  const releaseYear: string = releaseDate.split("-")[0];
   return `
     <img
         src="${IMG_PATH + imageLink}"
@@ -23,7 +28,7 @@ const createHtmlUpcomingMovie = async (imageLink, title, releaseDate) => {
  `;
 };
 
-upcomingMovies.forEach(async (upcomingMovie, index) => {
+upcomingMovies.forEach(async (upcomingMovie) => {
   const { poster_path, title, release_date } = upcomingMovie;
 
   const div = document.createElement("div");
